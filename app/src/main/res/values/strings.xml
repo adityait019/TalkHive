@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TalkHive</string>
+    <string name="signUpButtonText">Sign Up</string>
+    <string name="have_login_account_text">Already account?signIn</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "758559278640",
+    "project_id": "talkhive-179c2",
+    "storage_bucket": "talkhive-179c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758559278640:android:cc8c8f0819c03c25254ff5",
+        "android_client_info": {
+          "package_name": "com.example.talkhive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758559278640-3eot52r1gn83vh2c7i20ftqsiqq5sjcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.talkhive",
+            "certificate_hash": "56c095724adaed9ffdcb7ed1e63474738ea25a75"
+          }
+        },
+        {
+          "client_id": "758559278640-e3dmij1t8e73a7qpmjjpa8k8kgdaq30l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb_p_u2_SDCpPHAWC5DSKdAcqBEosycgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758559278640-e3dmij1t8e73a7qpmjjpa8k8kgdaq30l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
