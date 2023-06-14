@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Lavender">#6750A4</color>
     <color name="ButtonColor">#006d3e</color>
+    <color name="transparent">#B9FFFFFF</color>
 </resources>

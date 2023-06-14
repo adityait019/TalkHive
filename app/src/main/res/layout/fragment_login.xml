@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/Login_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widgets_height"
+            android:layout_marginStart="@dimen/widgets_margin_start"
+            android:layout_marginTop="@dimen/widgets_margin_top"
+            android:layout_marginEnd="@dimen/widgets_margin_end"
+            android:autofillHints="emailAddress"
+            android:background="@color/transparent"
+            android:hint="@string/abcd_gmail_com"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/widgets_padding"
+            android:textColorHint="#757575"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <EditText
+            android:id="@+id/Login_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widgets_height"
+            android:layout_marginStart="@dimen/widgets_margin_start"
+            android:layout_marginTop="@dimen/widgets_margin_top"
+            android:layout_marginEnd="@dimen/widgets_margin_end"
+            android:autofillHints="true"
+            android:background="@color/transparent"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="@dimen/widgets_padding"
+            android:textColorHint="#757575"
+            tools:ignore="VisualLintTextFieldSize" />
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_btn"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/widgets_margin_top"
+            android:padding="@dimen/widgets_padding"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/dontHave_account"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+</FrameLayout>

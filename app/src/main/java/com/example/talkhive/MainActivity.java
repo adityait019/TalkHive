@@ -8,13 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SignUp extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private EditText email,password,confirmPassword;
     private Button SignUpButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_main);
         init();
         SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,7 +26,7 @@ public class SignUp extends AppCompatActivity {
                 {
                     return;
                 }
-                Toast.makeText(SignUp.this,emailText+"\n"+"has successfully connected"+"\n"
+                Toast.makeText(MainActivity.this,emailText+"\n"+"has successfully connected"+"\n"
                 ,Toast.LENGTH_LONG).show();
             }
         });
