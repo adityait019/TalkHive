@@ -9,4 +9,5 @@
     <string name="abcd_gmail_com">abcd@gmail.com</string>
     <string name="login_btn">Login</string>
     <string name="dontHave_account">Don\'t have account?signUp</string>
+    <string name="verification_hint">00000</string>
 </resources>

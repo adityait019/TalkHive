@@ -14,7 +14,7 @@
         tools:ignore="UselessParent">
 
         <EditText
-            android:id="@+id/Login_email"
+            android:id="@+id/signUp_email"
             android:layout_width="match_parent"
             android:layout_height="@dimen/widgets_height"
             android:layout_marginStart="@dimen/widgets_margin_start"
@@ -23,9 +23,10 @@
             android:padding="@dimen/widgets_padding"
             android:hint="@string/abcd_gmail_com"
             android:inputType="textEmailAddress"
-            android:background="@color/transparent"/>
+            android:background="@color/transparent"
+            android:autofillHints="emailAddress" />
         <EditText
-            android:id="@+id/Login_password"
+            android:id="@+id/signUp_password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/widgets_height"
             android:layout_marginStart="@dimen/widgets_margin_start"
@@ -34,10 +35,11 @@
             android:padding="@dimen/widgets_padding"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:background="@color/transparent" />
+            android:background="@color/transparent"
+            android:autofillHints="password" />
 
         <EditText
-            android:id="@+id/Login_confirm_password"
+            android:id="@+id/signUp_confirm_password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/widgets_height"
             android:layout_marginStart="@dimen/widgets_margin_start"
@@ -46,16 +48,18 @@
             android:padding="@dimen/widgets_padding"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
-            android:background="@color/transparent" />
+            android:background="@color/transparent"
+            android:autofillHints="password" />
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/signUp_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login_btn"
+            android:text="@string/signUpButtonText"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/widgets_margin_top"
             android:padding="@dimen/widgets_padding"/>
         <TextView
+            android:id="@+id/signUp_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -63,5 +67,10 @@
             android:padding="5dp"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 </FrameLayout>

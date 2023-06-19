@@ -51,6 +51,7 @@
             android:layout_marginTop="@dimen/widgets_margin_top"
             android:padding="@dimen/widgets_padding"/>
         <TextView
+            android:id="@+id/dont_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -58,5 +59,10 @@
             android:padding="5dp"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 </FrameLayout>

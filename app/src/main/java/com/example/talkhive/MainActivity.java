@@ -1,41 +1,44 @@
 package com.example.talkhive;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import com.example.talkhive.fragments.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText email,password,confirmPassword;
-    private Button SignUpButton;
+    private FragmentManager manager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
-        SignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String emailText=email.getText().toString();
-                String passwordText=password.getText().toString();
-                String confirmPasswordText=confirmPassword.getText().toString();
-                if(emailText.isEmpty() || passwordText.isEmpty())
-                {
-                    return;
-                }
-                Toast.makeText(MainActivity.this,emailText+"\n"+"has successfully connected"+"\n"
-                ,Toast.LENGTH_LONG).show();
-            }
-        });
+        __init__();
+        addOrReplace(new LoginFragment());
     }
-    private void init()
-    {
-        email=findViewById(R.id.email_et);
-        password=findViewById(R.id.pass_et);
-        confirmPassword=findViewById(R.id.confirm_pass_et);
-        SignUpButton=(Button) findViewById(R.id.signUp_button);
+
+//    public void addOrReplace(Fragment fragment) {
+//        manager.beginTransaction().add(R.id.container, fragment).commit();
+//    }
+public void addOrReplace(Fragment fragment) {
+    FragmentTransaction transaction = manager.beginTransaction();
+
+    // Remove any existing fragment with the same container id
+    Fragment existingFragment = manager.findFragmentById(R.id.container);
+    if (existingFragment != null) {
+        transaction.remove(existingFragment);
+    }
+
+    // Add the new fragment to the container
+    transaction.add(R.id.container, fragment);
+    transaction.commit();
+}
+
+
+    private void __init__() {
+        manager = getSupportFragmentManager();
     }
 }
