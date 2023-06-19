@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.talkhive.R;
@@ -28,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpFragment extends Fragment {
     private EditText emailEt, passwordEt, confirmPasswordEt;
+    private TextView alreadyAccount;
     private Button signUpButton;
     private final String INVALID_STRING_MSG = "INVALID EMAIL";
     private final String PASSWORD_NOT_MATCHED_MSG = "PASSWORDS DO NOT MATCH";
@@ -62,7 +64,12 @@ public class SignUpFragment extends Fragment {
                 registerUser(email, password);
             }
         });
-
+    alreadyAccount.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            replaceInMain(new LoginFragment(),getContext());
+        }
+    });
         return root;
     }
 
@@ -101,7 +108,7 @@ public class SignUpFragment extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isComplete()) {
                     enableDisableProgressBar(false);
-                    replaceInMain(new LoginFragment(), getContext());
+                    replaceInMain(new MainPage(), getContext());
                 } else {
                     enableDisableProgressBar(false);
                     deleteUser(user);
@@ -120,6 +127,7 @@ public class SignUpFragment extends Fragment {
         emailEt = root.findViewById(R.id.signUp_email);
         passwordEt = root.findViewById(R.id.signUp_password);
         confirmPasswordEt = root.findViewById(R.id.signUp_confirm_password);
+        alreadyAccount=root.findViewById(R.id.signUp_text);
         auth = FirebaseAuth.getInstance();
         signUpButton = root.findViewById(R.id.signUp_button);
         progressBar = root.findViewById(R.id.progress_bar);
