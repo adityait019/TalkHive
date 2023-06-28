@@ -10,4 +10,6 @@
     <string name="login_btn">Login</string>
     <string name="dontHave_account">Don\'t have account?signUp</string>
     <string name="verification_hint">00000</string>
+    <string name="opposite_chat">opposite chat</string>
+    <string name="user_chat">user chat</string>
 </resources>
