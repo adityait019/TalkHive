@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_12dp">
 
     <TextView
+        android:id="@+id/reciever_message"
         style="@style/opposite_chat_view"
-        android:text="@string/opposite_chat"
-        android:textStyle="normal"/>
+        android:text="@string/sample_text"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/sender_message"
+        style="@style/send_message_time"
+        android:text="@string/wed_9_11pm"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        style="@style/recieved_message_time"
+        android:text="@string/wed_9_11pm"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         style="@style/user_chat_view"
-        android:text="@string/user_chat"/>
-</LinearLayout>
+        android:text="@string/sample_text"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

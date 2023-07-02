@@ -12,4 +12,7 @@
     <string name="verification_hint">00000</string>
     <string name="opposite_chat">opposite chat</string>
     <string name="user_chat">user chat</string>
+    <string name="type_msg_hint">Hello!!!!How are you doin?</string>
+    <string name="wed_9_11pm">wed, 9:11pm</string>
+    <string name="sample_text">fsdhfsdfsdfsdfsdf</string>
 </resources>
