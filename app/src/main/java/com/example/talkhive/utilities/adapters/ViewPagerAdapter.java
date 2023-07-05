@@ -1,4 +1,4 @@
-package com.example.talkhive.adapters;
+package com.example.talkhive.utilities.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

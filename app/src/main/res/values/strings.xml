@@ -15,4 +15,7 @@
     <string name="type_msg_hint">Hello!!!!How are you doin?</string>
     <string name="wed_9_11pm">wed, 9:11pm</string>
     <string name="sample_text">fsdhfsdfsdfsdfsdf</string>
+    <string name="name_hint">John</string>
+    <string name="signin">Add</string>
+    <string name="cancel">Cancel\n</string>
 </resources>

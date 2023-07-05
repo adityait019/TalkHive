@@ -5,7 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-import com.example.talkhive.adapters.ViewPagerAdapter;
+import com.example.talkhive.utilities.adapters.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -22,7 +22,6 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         init();
-        viewPager.setAdapter(adapter);
         new TabLayoutMediator(layout, viewPager, (tab, position) -> {
             switch (position) {
                 case 0:
@@ -39,5 +38,6 @@ public class ChatActivity extends AppCompatActivity {
         viewPager = (ViewPager2) findViewById(R.id.viewPager);
         layout = (TabLayout) findViewById(R.id.tabLayout);
         adapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
     }
 }
