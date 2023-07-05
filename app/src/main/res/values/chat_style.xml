@@ -103,5 +103,4 @@
         <item name="android:layout_height">@dimen/_48dp</item>
     </style>
 
-    <string name="type_msg_hint">Type message here</string>
 </resources>
