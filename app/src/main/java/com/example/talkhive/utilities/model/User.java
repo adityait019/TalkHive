@@ -2,12 +2,7 @@ package com.example.talkhive.utilities.model;
 
 public class User {
 
-    private String email, imageUri;
-
-    public User(String email, String imageUri) {
-        this.email = email;
-        this.imageUri = imageUri;
-    }
+    private String email;
 
     public User(String email) {
         this.email = email;
@@ -21,11 +16,5 @@ public class User {
         this.email = email;
     }
 
-    public String getImageUri() {
-        return imageUri;
-    }
 
-    public void setImageUri(String imageUri) {
-        this.imageUri = imageUri;
-    }
 }

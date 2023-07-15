@@ -29,7 +29,6 @@ import androidx.fragment.app.Fragment;
 import com.example.talkhive.R;
 import com.example.talkhive.utilities.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -169,23 +168,15 @@ public class SignUpFragment extends Fragment {
         uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                if (task.isSuccessful()) {
-                    storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            uploadUserRealTimeDb(uri.toString(), email);
-                        }
-                    });
-                } else uploadUserRealTimeDb(null, email);
+                uploadUserRealTimeDb(email);
             }
 
-            public void uploadUserRealTimeDb(final String uri, final String email) {
+            public void uploadUserRealTimeDb(final String email) {
                 final String uniqueKey = email.replace(".", "");
                 DatabaseReference dbReference = FirebaseDatabase.getInstance()
                         .getReference().child("Users/" + uniqueKey);
                 com.example.talkhive.utilities.model.User user;
-                if (uri == null) user = new User(email);
-                else user = new User(email, uri);
+                user=new User(email);
 
                 dbReference.setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
