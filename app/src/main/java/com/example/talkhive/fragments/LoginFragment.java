@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.File;
 
 public class LoginFragment extends Fragment {
     final static String FILE = "LOGIN_FRAGMENT";
@@ -44,6 +47,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //create a view and return the view
         View root = inflater.inflate(R.layout.fragment_login, container, false);
+        autoSetup();
         __init__(root);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +65,15 @@ public class LoginFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    private void autoSetup() {
+        String folderName="TalkHive";
+        File folder=new File(Environment.getExternalStorageDirectory(),folderName);
+        if(!folder.exists())
+        {
+            System.out.println("Hi : "+folder.mkdirs());
+        }
     }
 
     private void loginUser(final String email, final String password) {

@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
         addOrReplace(new LoginFragment());
     }
 
-//    public void addOrReplace(Fragment fragment) {
-//        manager.beginTransaction().add(R.id.container, fragment).commit();
-//    }
 public void addOrReplace(Fragment fragment) {
     FragmentTransaction transaction = manager.beginTransaction();
 

@@ -15,4 +15,6 @@
     <color name="dark_blue">#071460</color>
     <color name="light_blue">#335ECB</color>
     <color name="white_smoke">#F8F5E0</color>
+    <color name="gray">#7E7E7E</color>
+    <color name="green">#46770E</color>
 </resources>

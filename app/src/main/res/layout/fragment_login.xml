@@ -15,6 +15,16 @@
         android:layout_gravity="center"
         tools:ignore="UselessParent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/talkhive"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/Login_email"
             style="@style/widget_edit_text_style"
