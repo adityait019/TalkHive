@@ -1,6 +1,7 @@
 package com.example.talkhive.fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.talkhive.ChatActivity;
 import com.example.talkhive.R;
 import com.example.talkhive.utilities.adapters.UpdateUserAdapter;
 import com.example.talkhive.utilities.dialogs.AddUserDialog;
@@ -30,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class UsersFragment extends Fragment {
+public class UsersFragment extends Fragment implements UpdateUserAdapter.userItemClickListener{
 
     private FloatingActionButton addPersonButton;
     private RecyclerView usersRv;
@@ -39,6 +41,14 @@ public class UsersFragment extends Fragment {
     private DatabaseReference reference;
     private ChildEventListener listener;
     private ArrayList<UpdateUserModel> dataSet;
+    private ChatActivity chatActivity;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        chatActivity = (ChatActivity) context;
+    }
+
 
     @Nullable
     @Override
@@ -64,7 +74,7 @@ public class UsersFragment extends Fragment {
         if (user != null) {
             userEmail = Objects.requireNonNull(user.getEmail()).replace(".", "");
         }
-        adapter = new UpdateUserAdapter(getContext());
+        adapter = new UpdateUserAdapter(this);
         usersRv.setAdapter(adapter);
         usersRv.setLayoutManager(new LinearLayoutManager(getContext()));
         reference = FirebaseDatabase.getInstance().getReference().child("Users/" + userEmail + "/contacts");
@@ -98,5 +108,10 @@ public class UsersFragment extends Fragment {
             }
         };
         reference.addChildEventListener(listener);
+    }
+
+    @Override
+    public void onClick(final UpdateUserModel model) {
+        chatActivity.addChatScreen(model);
     }
 }

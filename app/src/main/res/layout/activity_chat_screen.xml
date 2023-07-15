@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/dark_blue"
-    tools:context=".fragments.ChatScreen">
+    tools:context=".ChatScreen">
 
     <View
         android:id="@+id/app_view"
@@ -27,6 +27,7 @@
             android:src="@color/black" />
 
     </androidx.cardview.widget.CardView>
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/button_back"
         style="@style/chat_back_button_style"
@@ -36,13 +37,15 @@
     <TextView
         android:id="@+id/chat_name"
         style="@style/chat_box_name_style"
-        android:text="@string/abcd_gmail_com"
         android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/abcd_gmail_com"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_view"
         style="@style/chat_recycler_view_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:clipToPadding="false"
         android:visibility="gone"
         tools:ignore="MissingConstraints" />

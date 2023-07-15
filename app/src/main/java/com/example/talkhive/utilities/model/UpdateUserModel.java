@@ -1,5 +1,5 @@
 package com.example.talkhive.utilities.model;
-
+import android.net.Uri;
 import java.io.Serializable;
 
 public class UpdateUserModel implements Serializable {
